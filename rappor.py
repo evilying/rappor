@@ -26,7 +26,7 @@ def Mapping1(clientvalue,cohort,num_hashes,bfsize, allunique):
         if(t not in listofindx):
             if(encoded[i]%16 not in allunique):
                 allunique.append(encoded[i]%16)
-                
+
             listofindx.append(t)
             i=i+1
             entries=entries+1
@@ -47,7 +47,7 @@ def FakeBloomFilter(bloom,f,bfsize):
             fakebloomfilter[i]=1
         else:
             fakebloomfilter[i]=bloom[i]
-   
+
     return fakebloomfilter
 
 
@@ -85,11 +85,11 @@ def mapBloomFilter(clientvalue, icohort, nhashes, bfsize):
         listofindx=[]
 
         while(i<len(encoded) and entries<nhashes):
-    
+
             t=encoded[i] % bfsize
-    
+
             if(t not in listofindx):
-               
+
                 listofindx.append(t)
                 i=i+1
                 entries=entries+1
